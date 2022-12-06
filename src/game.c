@@ -1,4 +1,5 @@
 #include <SDL.h>
+//#include <enet/enet.h>
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
 #include "simple_logger.h"
@@ -15,6 +16,7 @@ int main(int argc, char * argv[])
     Sprite *mouse;
     Color mouseColor = gfc_color8(255,100,255,200);
     
+
     /*program initializtion*/
     init_logger("gf2d.log");
     slog("---==== BEGIN ====---");
@@ -33,6 +35,7 @@ int main(int argc, char * argv[])
     /*demo setup*/
     sprite = gf2d_sprite_load_image("images/backgrounds/bg_flat.png");
     mouse = gf2d_sprite_load_all("images/pointer.png",32,32,16,0);
+    
     /*main game loop*/
     while(!done)
     {
@@ -63,9 +66,11 @@ int main(int argc, char * argv[])
         gf2d_graphics_next_frame();// render current draw frame and skip to the next frame
         
         if (keys[SDL_SCANCODE_ESCAPE])done = 1; // exit condition
-        slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
+        // slog("Rendering at %f FPS",gf2d_graphics_get_frames_per_second());
     }
     slog("---==== END ====---");
     return 0;
+
+    
 }
 /*eol@eof*/
