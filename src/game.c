@@ -1,5 +1,5 @@
 #include <SDL.h>
-//#include <enet/enet.h>
+#include <enet/enet.h>
 #include "gf2d_graphics.h"
 #include "gf2d_sprite.h"
 #include "simple_logger.h"
